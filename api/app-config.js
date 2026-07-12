@@ -1,6 +1,6 @@
 (function initAppConfig() {
-  const API_ROOT = "https://api.upcoinmeta.middlesvilletrusted.com/api";
-  const IMAGE_ROOT = "https://api.upcoinmeta.middlesvilletrusted.com/images";
+  const API_ROOT = "https://interbmarketfx-com-qbgp.vercel.app/api";
+  const IMAGE_ROOT = "https://interbmarketfx-com-qbgp.vercel.app/images";
 
   const trimTrailingSlash = (value) => String(value || "").replace(/\/+$/, "");
   const withLeadingSlash = (value) => {
