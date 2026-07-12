@@ -33,38 +33,92 @@
 	   <link rel="stylesheet" href="preloader/style.css">
 
 <style>
+	.custom-social-proof {
+		position: fixed;
+		left: 18px;
+		bottom: 24px;
+		z-index: 9999;
+		pointer-events: none;
+	}
+
 	.notification-wrapper {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    max-width: 300px;
-    margin: 10px auto;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-}
+		width: min(338px, calc(100vw - 36px));
+		padding: 16px 18px;
+		border: 1px solid rgba(23, 188, 108, 0.2);
+		border-left: 4px solid #17bc6c;
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.96);
+		box-shadow: 0 18px 45px rgba(17, 37, 31, 0.18);
+		text-align: left;
+		opacity: 0;
+		transform: translateX(-22px);
+		transition: opacity 0.45s ease, transform 0.45s ease;
+		backdrop-filter: blur(12px);
+		pointer-events: auto;
+	}
 
-.notification-content {
-    color: #333;
-    font-size: 14px;
-}
+	.notification-header {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 8px;
+		color: #454040;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
 
-.notification-content small {
-    color: #666;
-    display: block;
-    margin-top: 5px;
-}
+	.notification-icon {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(23, 188, 108, 0.14);
+		color: #17bc6c;
+		font-size: 14px;
+	}
 
-.fa-check-circle {
-    color: green;
-}
+	.notification-content {
+		color: #454040;
+		font-size: 15px;
+		line-height: 1.45;
+		margin: 0;
+	}
 
-.show-notification {
-    opacity: 1;
-    transform: translateY(0);
-}
+	.notification-content strong {
+		color: #141414;
+	}
+
+	.notification-content small {
+		color: #777;
+		display: block;
+		margin-top: 8px;
+		font-size: 12px;
+	}
+
+	.fa-check-circle {
+		color: #17bc6c;
+	}
+
+	.show-notification {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	@media (max-width: 575.98px) {
+		.custom-social-proof {
+			left: 12px;
+			right: 12px;
+			bottom: 18px;
+		}
+
+		.notification-wrapper {
+			width: 100%;
+		}
+	}
 
 	/* General styling for the widget */
 .tradingview-widget-container {
@@ -765,14 +819,18 @@ This is where we accompany you and launch your own crypto ETP alongside with you
 			</div>
 		</div>
 
-		<section class="custom-social-proof d-none">
+		<section class="custom-social-proof" aria-live="polite">
 				<div class="notification-wrapper">
+					<div class="notification-header">
+						<span class="notification-icon"><i class="fas fa-wallet"></i></span>
+						<span>Live account activity</span>
+					</div>
 					<p class="notification-content">
 						Someone from <span id="country">Nepal</span><br>
-						recently <span id="transaction-type">withdrew</span> 
-						<span id="amount">$10,000 USD</span>
+						completed a <strong id="transaction-type">withdrawal of</strong>
+						<strong id="amount">$10,000 USD</strong>
 						<small>
-							<span id="time">1</span> hour ago &nbsp; 
+							<span id="time">1</span> hour ago &nbsp;
 							<i class="fa fa-check-circle"></i> Verified by 
 							<a class="poweredby" href="blockchain.html" target="_blank">BlockChain</a>
 						</small>
@@ -786,9 +844,20 @@ This is where we accompany you and launch your own crypto ETP alongside with you
 	</div>
 	
 <script>
-const countries = ["Nepal", "USA", "Germany", "India"];
-const transactionTypes = ["withdrew", "deposited"];
-const amounts = ["$10,000 USD", "$5,000 USD", "$15,000 USD", "$2,900 USD", "$100,000 USD", "$85,000 USD", "$5,800 USD", "$2,520 USD"];
+const countries = ["Nepal", "USA", "Germany", "India", "Canada", "United Kingdom", "Australia"];
+const transactionTypes = ["withdrawal of", "deposit of"];
+const amounts = [
+    "$10,000 USD",
+    "$5,000 USD",
+    "$15,000 USD",
+    "$2,900 USD",
+    "0.42 BTC",
+    "1.8 ETH",
+    "4,500 USDT",
+    "12,250 USDT",
+    "0.95 BTC",
+    "7.4 ETH"
+];
 
 function updateNotification() {
     const country = countries[Math.floor(Math.random() * countries.length)];
@@ -801,15 +870,17 @@ function updateNotification() {
     document.getElementById("amount").textContent = amount;
     document.getElementById("time").textContent = time;
 
-    const notification = document.querySelector('.notification-wrapper');
-    notification.classList.add('show-notification');
+    const notification = document.querySelector(".notification-wrapper");
+    if (!notification) return;
+
+    notification.classList.add("show-notification");
     setTimeout(() => {
-        notification.classList.remove('show-notification');
-    }, 4000); // Notification stays visible for 4 seconds
+        notification.classList.remove("show-notification");
+    }, 5200);
 }
 
-// setInterval(updateNotification, 5000); // Updates every 5 seconds
-
+updateNotification();
+setInterval(updateNotification, 7600);
 
 </script>
 <script src="preloader/scriipt.js"></script>
