@@ -1,0 +1,71 @@
+      /* Default Light Mode Styles */
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    /* Floating Button Style */
+    .dark-mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 20px;
+        border: none;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #ffffff;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s;
+    }
+
+    .dark-mode-toggle:hover {
+        background-color: #0056b3;
+    }
+
+    /* Container for logo and site name */
+    .logo-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Logo Image Style */
+    .logo-img {
+        display: block;
+        max-width: 100px; /* Adjust size as needed */
+    }
+
+    /* Site Name Overlay */
+    .logo-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        display: none; /* Hide by default */
+    }
+
+    /* Dark mode styles */
+.dark-mode .card-body {
+    background-color: #333; /* Dark background for the card */
+    color: #f1f1f1; /* Light text color */
+}
+
+.dark-mode .card-body h2,
+.dark-mode .card-body p {
+    color: #f1f1f1; /* Ensure all text is light-colored */
+}
+
+/* Optional: If you have other elements that need styling in dark mode, add them here */

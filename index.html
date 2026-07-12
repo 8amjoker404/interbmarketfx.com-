@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<!-- index.html  18:24:48 GMT -->
+
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Online trading platform on Indices, Cryptocurrencies, Commodities and Forex">
+	<meta name="keywords" content="Online Trading Platform | interb market fx">
+	<meta name="author" content="interb market fx">
+	<meta name="theme-color" content="#​17bc6c">
+	
+	<link rel="preload" href="js/vendors/bootstrap.bundle.min.js" as="script">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/dm-sans-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/dm-sans-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.html">
+	<title>Homepage - Online trading platform on Indices, Cryptocurrencies, Commodities and Forex.</title>
+	<link href="../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  >
+	<script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/notification.css">
+
+	   <link rel="stylesheet" href="dark/styles.css">
+	   <link rel="stylesheet" href="preloader/style.css">
+
+<style>
+	.notification-wrapper {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 300px;
+    margin: 10px auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.notification-content {
+    color: #333;
+    font-size: 14px;
+}
+
+.notification-content small {
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+.fa-check-circle {
+    color: green;
+}
+
+.show-notification {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+	/* General styling for the widget */
+.tradingview-widget-container {
+    margin: 0 auto;
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .tradingview-widget-container {
+        width: 100%; /* Full width on smaller screens */
+        height: 350px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .tradingview-widget-container {
+        width: 85%; /* Adjust width for tablet devices */
+        height: 400px; /* Adjust height */
+    }
+}
+
+@media (min-width: 992px) {
+    .tradingview-widget-container {
+        width: 425px; /* Default width for larger screens */
+        height: 450px;
+    }
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+	<div id="preloader">
+        <div id="loader"></div>
+    </div>
+	
+        <!-- Toggle Button -->
+        <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+
+	
+	<section class="bg" style="background-color:green;">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="d-none">Stock price ticker</h1>
+					<ul class="price-ticker list-inline overflow-hidden mb-0">
+						<li class="list-inline-item">TSLA<span class="badge bg-up ms-1">160.27(+10.97%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">NVDA<span class="badge bg-down ms-1">198.02(-0.48%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">AMZN<span class="badge bg-down ms-1">99.22(-0.61%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">MSFT<span class="badge bg-up ms-1">248.00(+3.07%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">AAPL<span class="badge bg-up ms-1">143.96(+1.48%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">MCD<span class="badge bg-up ms-1">274.72(+0.64%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">INTC<span class="badge bg-down ms-1">30.09(-0.31%)<i class="fas fa-circle"></i></span></li>
+						<li class="list-inline-item">XOM<span class="badge bg-up ms-1">117.76(+4.02%)<i class="fas fa-circle"></i></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<header class="navbar navbar-expand-lg navbar-light">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand me-auto" href="index.html">
+            <!-- Site Logo -->
+            <img id="siteLogo" src="img/user/logo.png" alt="interb market fx" class="d-inline-block" style="width: 155px; height: auto; margin-right: 20px;">
+           
+			   <!-- Site Name Overlay -->
+                    <span id="logoText" class="logo-text">interb market fx</span>
+        </a>
+
+
+        <div class="collapse navbar-collapse d-flex justify-content-between d-none d-xl-block" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index-2.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="markets.html">Markets</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownCompany" data-bs-toggle="dropdown" aria-expanded="false">Company</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="about.html">About</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="education.html">Academy</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownResources" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="help-center.html">Help Center <i class="fas fa-info-circle fa-sm"></i></a></li>
+                        <li><a class="dropdown-item" href="security.html">Security <i class="fas fa-shield fa-sm"></i></a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="promotion.html">Promotion <i class="fas fa-trophy fa-sm"></i></a></li>
+                        <li><a class="dropdown-item" href="legal-docs.html">Legal Docs<i class="fas fa-gavel fa-sm"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="optional-link d-flex align-items-center ms-4 d-none d-xl-block">
+                <a href="login.html" class="btn btn-link link-secondary text-decoration-none">Sign in</a>
+                <a href="login.html" class="btn btn-outline-primary rounded-pill">Get started<i class="fas fa-arrow-right fa-sm ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+	<main>
+	
+		<section>
+			<div class="container text-center"> <!-- Added text-center class to center content -->
+				<h1 class="fw-bold display-4">Build a Better Future with interb market fx. Investment</h1>
+				<a href="#" class="btn btn-info rounded-pill">Get started<i class="fas fa-arrow-right fa-sm ms-1"></i></a>
+		
+				<!-- TradingView Widget BEGIN -->
+				<div class="tradingview-widget-container mt-4" style="margin: 0 auto; display: inline-block;"> <!-- Centering the widget -->
+					<div class="tradingview-widget-container__widget"></div>
+					<div class="tradingview-widget-copyright">
+						<a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+							
+						</a>
+					</div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+					{
+						"interval": "1m",
+						"width": 425,
+						"isTransparent": false,
+						"height": 450,
+						"symbol": "NASDAQ:AAPL",
+						"showIntervalTabs": true,
+						"displayMode": "single",
+						"locale": "en",
+						"colorTheme": "dark"
+					}
+					</script>
+				</div>
+				<!-- TradingView Widget END -->
+			</div>
+		</section>
+		
+
+		<section class="pb-5 in-avo-1" style="padding-top: 50px;"> 
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="card border-0">
+							<div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center">
+								<div class="col-md-3 col-lg-auto border-end-lg">
+									<div class="pe-lg-3">
+										<h6 class="mb-md-0 mb-lg-0">Various trusted media</h6>
+										<p class="text-muted mb-0 d-none d-lg-block">have covered us</p>
+									</div>
+								</div>
+								<div class="col-md-9 col-lg-10">
+									<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 d-flex align-items-center gx-0">
+										<div class="col text-center"><img class="opacity-75 my-2 my-md-1 my-lg-1" src="img/in-avo-press-1.svg" alt="client-logo" width="127" height="19"></div>
+										<div class="col text-center"><img class="opacity-75 my-2 my-md-1 my-lg-1" src="img/in-avo-press-2.svg" alt="client-logo" width="126" height="23"></div>
+										<div class="col text-center d-none d-lg-block"><img class="opacity-75 my-2 my-md-1 my-lg-1" src="img/in-avo-press-3.svg" alt="client-logo" width="155" height="23"></div>
+										<div class="col text-center d-none d-lg-block"><img class="opacity-75 my-2 my-md-1 my-lg-1" src="img/in-avo-press-4.svg" alt="client-logo" width="102" height="29"></div>
+										<div class="col text-center"><img class="opacity-75 my-2 my-md-1 my-lg-1" src="img/in-avo-press-5.svg" alt="client-logo" width="124" height="29"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="py-5 in-avo-2">
+			<div class="container">
+				<div class="row row-cols-md-3 row-cols-lg-4 text-center mb-5">
+					<div class="col">
+						<h1 class="mb-0"><span class="count" data-counter-end="183092">183092</span><span class="text-primary">+</span></h1>
+						<p class="text-muted">Daily trades</p>
+					</div>
+					<div class="col">
+						<h1 class="mb-0"><span class="count" data-counter-end="364887">364887</span><span class="text-primary">+</span></h1>
+						<p class="text-muted">Clients</p>
+					</div>
+					<div class="col d-md-none d-lg-block">
+						<h1 class="mb-0"><span class="count" data-counter-end="96">96</span> billion<span class="text-primary">+</span></h1>
+						<p class="text-muted">Asset management</p>
+					</div>
+					<div class="col">
+						<h1 class="mb-0"><span class="count" data-counter-end="23">23</span> billion<span class="text-primary">+</span></h1>
+						<p class="text-muted">Daily trade volume</p>
+					</div>
+				</div>
+				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 d-flex align-items-center text-center mt-md-4 gy-3 gy-md-0">
+					<div class="col">
+						<div class="icon-wrap bg-info rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-2-icon-1.png" alt="icon" width="38" height="38"></div>
+						<h4>Securing your profit</h4>
+						<p>By default, each time you hit 10% profit, we secure your profits by converting them into EUR so you don't need to watch the market like a hawk. Alternatively you can choose to either secure performance fees only</p>
+					</div>
+					<div class="col active-col">
+						<div class="icon-wrap bg-info rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-2-icon-2.png" alt="icon" width="38" height="38"></div>
+						<h4 class="text-white">Minimizing your fees</h4>
+						<p>Minimizing fees in crypto is crucial to maximizing your investment's potential. 
+							Here are some tips to help you reduce fees in the crypto space: Follow crypto news and updates to stay aware of fee changes and optimizations. Remember, even small fee savings can add up over time.
+							 Be mindful of fees and optimize your crypto strategy to minimize them..</p>
+					</div>
+					<div class="col d-md-none d-lg-block">
+						<div class="icon-wrap bg-info rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-2-icon-3.png" alt="icon" width="38" height="38"></div>
+						<h4>Mitigating risks</h4>
+						<p>We build a custom portfolio based on your preferred risk profile. As prices move, our engine adjusts your portfolio to ensure it remains balanced and in line with your risk profile.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section class="pb-5 in-avo-6">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="d-none">interb market fx 10 section</h2>
+						<div class="card border-0">
+							<div class="card-body">
+								<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 d-flex align-items-center">
+									<div class="col d-flex justify-content-center align-items-center border-end-lg">
+										<div class="icon-wrap bg-info rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-10-icon-1.png" alt="icon" width="38" height="38"></div>
+										<div>
+											<p class="fw-bold mb-0">Advanced
+												<br>analysis tools</p>
+										</div>
+									</div>
+									<div class="col d-flex justify-content-center align-items-center border-end-lg">
+										<div class="icon-wrap bg-info rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-10-icon-2.png" alt="icon" width="38" height="38"></div>
+										<div>
+											<p class="fw-bold mb-0">Fast execution
+												<br>0 commision</p>
+										</div>
+									</div>
+									<div class="col d-flex justify-content-center align-items-center border-end-lg">
+										<div class="icon-wrap bg-info rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-10-icon-3.png" alt="icon" width="38" height="38"></div>
+										<div>
+											<p class="fw-bold mb-0">Low minimum
+												<br>deposit of $100</p>
+										</div>
+									</div>
+									<div class="col d-flex justify-content-center align-items-center">
+										<div class="icon-wrap bg-info rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-10-icon-4.png" alt="icon" width="38" height="38"></div>
+										<div>
+											<p class="fw-bold mb-0">Over 2,100
+												<br>assets to trade</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<section class="py-5 in-avo-11">
+			<div class="container">
+				<div class="row gy-5 gy-lg-0">
+					<div class="col-lg-6">
+						<h1><span class="text-highlight">Elevate your trading</span> with the premium insights and robust education.</h1>
+						<p class="lead text-muted mb-md-3">You need easy-to-use and powerful technology, service you can rely on, and value-oriented pricing and fees that are transparent and fair, you get the value you deserve. We make investing in crypto safer, faster and easier than ever before.</p>
+						<div class="row d-flex align-items-center">
+							<div class="col-md-12 col-lg-5"><img src="img/in-avo-11-image.webp" class="mx-auto mx-md-auto mx-lg-0 d-block mb-2 mb-md-3 mb-lg-0" alt="people" width="200"></div>
+							<div class="col-md-12 col-lg-7">
+								<p class="text-secondary">One of the most influential investment minds in the world. He has both a powerful presence and the confidence to make large bets based on his convictions.</p>
+								<h6 class="mt-2 mb-0">Anthony Torres</h6><span class="blockquote-footer">Chief Investment Officer &amp; Director</span></div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="card-badge">
+							<div class="card card-body ms-lg-5 position-relative"><span class="badge rounded-pill bg-primary">Low rates start from</span>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="price-display">
+										<h3 class="mb-0 text-primary">Stocks</h3>
+										<h1 class="fw-bold mb-0"><span class="currency">$</span>2<span class="decimal">95</span></h1>
+										<p class="text-muted mt-0">Other fee may apply</p>
+									</div>
+									<div><i class="fas fa-chart-pie fa-8x"></i></div>
+								</div>
+								<hr class="my-2">
+								<ul class="fa-ul lh-lg mt-2 mb-4">
+									<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>85 millisecond avg trade execution</li>
+									<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Multi-asset coverage; Stocks &amp; Commodities</li>
+									<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>No dealing desk, no requotes</li>
+									<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Expert Advisors supported</li>
+								</ul><a href="login.html" class="btn btn-outline-primary rounded-pill">Create Account<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="pt-1 pb-5 pt-md-2 pb-md-5 py-lg-5 in-avo-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-5 position-relative">
+						<img class="img-decor" src="img/new/bu-man.jpg" alt="decor" style="width: 100%; height: auto;">
+						<div class="card card-body card-tv">
+							<div id="tradingview-widget"></div>
+						</div>
+					</div>
+					
+					<div class="col-md-12 col-lg-7">
+						<h2>Find the products that <span class="text-highlight">match your needs</span> and desired risk level.</h2>
+						<p>As more and more alternative investments become available, investors are looking for next-level diversification.
+This is where we accompany you and launch your own crypto ETP alongside with you, so that you can focus on your core business.</p>
+						<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-1 mt-2">
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-yellow mb-0">EQ</div>
+										<p class="fw-bold small text-primary mb-0">Stocks</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-green mb-0">ET</div>
+										<p class="fw-bold small text-primary mb-0">ETFs</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-red mb-0">CM</div>
+										<p class="fw-bold small text-primary mb-0">Commodities</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-green mb-0">MF</div>
+										<p class="fw-bold small text-primary mb-0">Mutual funds</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-grey mb-0">FX</div>
+										<p class="fw-bold small text-primary mb-0">Forex</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-lightgreen mb-0">FX</div>
+										<p class="fw-bold small text-primary mb-0">Bond</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-purple mb-0">CT</div>
+										<p class="fw-bold small text-primary mb-0">Crypto</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-orange mb-0">LO</div>
+										<p class="fw-bold small text-primary mb-0">Listed options</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-body d-flex align-items-center">
+										<div class="icon-wrap icon-wrap-micro bg-lightgrey mb-0">FU</div>
+										<p class="fw-bold small text-primary mb-0">Futures</p>
+									</div>
+								</div>
+							</div>
+						</div><a href="#" class="btn btn-link link-primary text-decoration-none my-2 px-0">See more instruments<i class="fas fa-arrow-right ms-1"></i></a></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="py-5 in-avo-6">
+			<div class="container">
+				<h1 class="mb-1 text-center">Choose your  <span class="text-highlight">account type</span></h1>
+				<p class="lead text-center text-muted">Simply select your preferred account type in our application form.</p>
+				<div class="row row-cols-md-2 row-cols-lg-3 mt-3 mt-md-5 gy-4 gy-md-0">
+					<div class="col-lg-6 d-md-none d-lg-block">
+						<div class="card card-body">
+							<div class="col d-flex justify-content-between align-items-start">
+								<div>
+									<h3 class="mb-0">Classic account</h3>
+									<p class="text-muted">Benefit from industry-leading entry prices</p>
+								</div>
+								<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 ms-2"><i class="fas fa-chart-area fa-lg text-primary"></i></div>
+							</div>
+							<ul class="fa-ul lh-lg mt-2 mb-4">
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>2.5% Daily for 10Days</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Designed to maximize full profit potential under a budget portfolio. Investors have full control to manage their investment and tie deposits to maintain the persistent earnings.</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Minimum Investment: 1,000 USD</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Maximum Investment: 19,999 USD</li>
+							</ul><a href="login.html" class="btn btn-outline-primary rounded-pill">Create an account<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+					</div>
+					<div class="col-lg-6">
+						<div class="card card-body">
+							<div class="col d-flex justify-content-between align-items-start">
+								<div>
+									<h3 class="mb-0">Platinum account</h3>
+									<p class="text-muted">Receive even tighter spreads and commissions</p>
+								</div>
+								<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 ms-2"><i class="fas fa-chart-area fa-lg text-primary"></i></div>
+							</div>
+							<ul class="fa-ul lh-lg mt-2 mb-4">
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>3.5% Daily for 10Days</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>The fruitful investment plan is devised for Platinum investors to enjoy their investment experience with a large or unlimited investment with maximum profitability and minimal risks.</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Minimum Investment: 20,000 USD</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Maximum Investment: Unlimited</li>
+							</ul><a href="#" class="btn btn-primary rounded-pill">Create an account<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-md-12 col-lg-10">
+						<div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 gx-2 text-center mt-1">
+							<div class="col">
+								<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-6-icon-1.png" alt="icon" width="54" height="54"></div>
+								<h6 class="text-secondary">Wide Range of Trading Instruments</h6></div>
+							<div class="col">
+								<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-6-icon-2.png" alt="icon" width="54" height="54"></div>
+								<h6 class="text-secondary">Unparalled Trading Conditions</h6></div>
+							<div class="col">
+								<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-6-icon-3.png" alt="icon" width="54" height="54"></div>
+								<h6 class="text-secondary">Globaly Licensed &amp; Regulated</h6></div>
+							<div class="col">
+								<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-6-icon-4.png" alt="icon" width="54" height="54"></div>
+								<h6 class="text-secondary">Commited to Forex Education</h6></div>
+							<div class="col d-none d-lg-block">
+								<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 mb-2"><img src="img/in-avo-6-icon-5.png" alt="icon" width="54" height="54"></div>
+								<h6 class="text-secondary">Regular Contents &amp; Promotions</h6></div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-cols-md-2 row-cols-lg-3 mt-3 mt-md-5 gy-4 gy-md-0">
+					<div class="col d-md-none d-lg-block">
+						<div class="card card-body">
+							<div class="col d-flex justify-content-between align-items-start">
+								<div>
+									<h3 class="mb-0">Learn</h3>
+									<p class="text-muted">Knowledge to get started</p>
+								</div>
+								<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 ms-2"><i class="fas fa-graduation-cap fa-lg text-primary"></i></div>
+							</div>
+							<ul class="fa-ul lh-lg mt-2 mb-4">
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>FREE Demo Account</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Step-by step tutorials &amp; articles</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Online webinars &amp; local seminars</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Your own Account Manager</li>
+							</ul><a href="login.html" class="btn btn-outline-primary rounded-pill">Demo account<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+					</div>
+					<div class="col">
+						<div class="card card-body">
+							<div class="col d-flex justify-content-between align-items-start">
+								<div>
+									<h3 class="mb-0">Trade</h3>
+									<p class="text-muted">Take your first profit</p>
+								</div>
+								<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 ms-2"><i class="fas fa-chart-area fa-lg text-primary"></i></div>
+							</div>
+							<ul class="fa-ul lh-lg mt-2 mb-4">
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Tight spreads</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Superfast trade execution</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Hi-tech forex trading tools</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Ultimate risk protection &amp; security</li>
+							</ul><a href="login.html" class="btn btn-outline-primary rounded-pill">Real account<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+					</div>
+					<div class="col">
+						<div class="card card-body">
+							<div class="col d-flex justify-content-between align-items-start">
+								<div>
+									<h3 class="mb-0">Invest</h3>
+									<p class="text-muted">Choose the best portfolio</p>
+								</div>
+								<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 ms-2"><i class="fas fa-chart-pie fa-lg text-primary"></i></div>
+							</div>
+							<ul class="fa-ul lh-lg mt-2 mb-4">
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>No need to be an experienced</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Large number of strategies</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Profit whenever Managers earn</li>
+								<li><span class="fa-li"><i class="fas fa-check text-primary"></i></span>Full control of your Investment</li>
+							</ul><a href="login.html" class="btn btn-outline-primary rounded-pill">Start following<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="pb-5 in-avo-4">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12 col-lg-9 position-relative">
+						<div class="card card-body text-center">
+							<div id="testimoni" class="carousel slide">
+								<div class="carousel-inner">
+									<div class="carousel-item">
+										<h2>“interb market fx is my first choice for invest”</h2>
+										<p class="lead text-muted">I’ve been a client for 7 years. I am very happy with the platform, pricing, answers to my requests. I am also very happy with the professionalism and the effectiveness of my account manager.</p>
+										<h6 class="mt-2 mb-0">Christy Costa</h6>
+										<p class="text-muted">interb market fx Investor</p>
+									</div>
+									<div class="carousel-item">
+										<h2>“Extremely satisfied with the service”</h2>
+										<p class="lead text-muted">The whole process was seamless and very easy. The best part of it is the actual annualised return on the investment. I am extremely satisfied with the service and advice of interb market fx.</p>
+										<h6 class="mt-2 mb-0">Howard Lane</h6>
+										<p class="text-muted">interb market fx Investor</p>
+									</div>
+									<div class="carousel-item">
+										<h2>“Satisfied with the growth my investment”</h2>
+										<p class="lead text-muted">interb market fx gave me the best independent advice on my investment strategy. I am able to monitor the performance, switch funds and add to the investment with little or no hassle, even as a sophisticated investor.</p>
+										<h6 class="mt-2 mb-0">John Wright</h6>
+										<p class="text-muted">interb market fx Investor</p>
+									</div>
+								</div>
+							</div>
+						</div><img class="position-absolute card-decor animate-5" src="img/in-avo-4-decor-1.svg" alt="decor" style="top: 50%; left: -5%;"><img class="position-absolute card-decor animate-6" src="img/in-avo-4-decor-2.svg" alt="decor" style="top: -22%; left: 10%;"><img class="position-absolute card-decor animate-7" src="img/in-avo-4-decor-3.svg" alt="decor" style="top: -16%; left: 94%;"><img class="position-absolute card-decor animate-6" src="img/in-avo-4-decor-4.svg" alt="decor" style="top: 82%; left: 96.5%;"><img class="position-absolute animate-1" src="img/in-avo-4-avatar-1.png" alt="decor" style="top: -15%; left: -15%;"><img class="position-absolute animate-2" src="img/in-avo-4-avatar-2.png" alt="decor" style="top: 28%; left: -20%;"><img class="position-absolute animate-2" src="img/in-avo-4-avatar-3.png" alt="decor" style="top: 16%; left: 117%;"><img class="position-absolute animate-1" src="img/in-avo-4-avatar-4.png" alt="decor" style="top: 58%; left: 108%;"></div>
+				</div>
+			</div>
+		</section>
+		<section class="py-5 mt-1 in-avo-16" style="background: url(img/in-avo-16-background.webp) no-repeat bottom">
+			<div class="container">
+				<div class="row row-cols-1 row-cols-md-2 gy-2">
+					<div class="col d-flex align-items-start">
+						<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-16-icon-1.png" alt="icon" width="54" height="54"></div>
+						<div>
+							<h3>Trust through transparency</h3>
+							<p class="mb-0">All information about your investments is available to you in real time</p><a href="#" class="btn btn-link link-primary text-decoration-none mt-1 mb-2 px-0">Learn more<i class="fas fa-arrow-right ms-1"></i></a></div>
+					</div>
+					<div class="col d-flex align-items-start">
+						<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-16-icon-2.png" alt="icon" width="54" height="54"></div>
+						<div>
+							<h3>Controlled risk</h3>
+							<p class="mb-0">Risk is reduced by using a combination of strategies which work together in different market conditions</p><a href="#" class="btn btn-link link-primary text-decoration-none mt-1 mb-2 px-0">Learn more<i class="fas fa-arrow-right ms-1"></i></a></div>
+					</div>
+					<div class="col d-flex align-items-start">
+						<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-16-icon-3.png" alt="icon" width="54" height="54"></div>
+						<div>
+							<h3>Reliable infrastructure</h3>
+							<p class="mb-0">None of the trade opportunities are missed and so you are always in the front slot to capture returns.</p><a href="#" class="btn btn-link link-primary text-decoration-none mt-1 mb-2 px-0">Learn more<i class="fas fa-arrow-right ms-1"></i></a></div>
+					</div>
+					<div class="col d-flex align-items-start">
+						<div class="icon-wrap icon-wrap-large bg-primary rounded-circle flex-shrink-0 me-2"><img src="img/in-avo-16-icon-4.png" alt="icon" width="54" height="54"></div>
+						<div>
+							<h3>Integrated support</h3>
+							<p class="mb-0">Rest assured, we’re here every step of your investment journey. Average response time during office hours</p><a href="#" class="btn btn-link link-primary text-decoration-none mt-1 mb-2 px-0">Learn more<i class="fas fa-arrow-right ms-1"></i></a></div>
+					</div>
+				</div>
+				<div class="row justify-content-center mt-4">
+					<div class="col-md-12 col-lg-10">
+						<div class="card card-body text-center">
+							<h2 class="mt-2 mb-3">Fast account opening in <span class="text-highlight">3 simple steps</span></h2>
+							<div class="row row-cols-1 row-cols-md-3">
+								<div class="col">
+									<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 mb-1"><span class="fw-bold fs-4 text-primary">1</span></div>
+									<h5 class="mt-1">Register</h5>
+									<p>Choose an account type and submit your application</p>
+								</div>
+								<div class="col">
+									<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 mb-1"><span class="fw-bold fs-4 text-primary">2</span></div>
+									<h5 class="mt-1">Fund</h5>
+									<p>Fund your account using a wide range of funding methods</p>
+								</div>
+								<div class="col">
+									<div class="icon-wrap bg-primary rounded-circle flex-shrink-0 mb-1"><span class="fw-bold fs-4 text-primary">3</span></div>
+									<h5 class="mt-1">Invest</h5>
+									<p>Start investing in investment instruments that you like</p>
+								</div>
+							</div><a href="#" class="btn btn-outline-primary rounded-pill mt-2">Create Account<i class="fas fa-arrow-right fa-sm ms-1"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-5 in-avo-17">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12 col-lg-10 position-relative">
+						<h2 class="text-center mb-1">Market analysis and trade inspiration.</h2>
+						<p class="lead text-muted text-center">Get news, commentary and actionable trade ideas from the expert analysts.</p>
+						<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-2 gy-2 mt-2 mb-3">
+							<div class="col-md-6 col-lg-6">
+								<div class="card card-link">
+									<a class="link-light" href="#"><img src="img/in-avo-17-image-1.jpg" class="img-fluid rounded-1" alt="image">
+										<div class="card-img-overlay">
+											<h4 class="text-white mb-0">News and inspiration</h4>
+											<p class="text-white text-opacity-75 mb-0">Economic news and prospect</p>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6">
+								<div class="card card-link">
+									<a class="link-light" href="#"><img src="img/in-avo-17-image-2.jpg" class="img-fluid rounded-1" alt="image">
+										<div class="card-img-overlay">
+											<h4 class="text-white mb-0">Insight from experts</h4>
+											<p class="text-white text-opacity-75 mb-0">Plan and trading strategy</p>
+										</div>
+									</a>
+								</div>
+							</div>
+							
+						</div><img class="position-absolute card-decor animate-5" src="img/in-avo-4-decor-1.svg" alt="decor" style="top: 64%; left: -5%;"><img class="position-absolute card-decor animate-6" src="img/in-avo-4-decor-2.svg" alt="decor" style="top: 0%; left: 10%;"><img class="position-absolute card-decor animate-7" src="img/in-avo-4-decor-3.svg" alt="decor" style="top: 40%; left: 96%;"><img class="position-absolute card-decor animate-6" src="img/in-avo-4-decor-4.svg" alt="decor" style="top: 98%; left: 86.5%;"></div>
+				</div>
+			</div>
+		</section>
+		<section class="py-5 in-avo-18 bg-white">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12 col-lg-12 text-center">
+						<h2>Fast and reliable methods.</h2>
+						<p class="lead mb-5">At the time of deposit and also withdrawal</p>
+						<div class="row row-cols-1 row-cols-md-4 row-cols-lg-6 gx-0">
+							<div class="col text-center border-bottom border-bottom-md-0 border-end-md"><img class="opacity-75 my-2 my-md-1" src="img/in-avo-18-icon-1.svg" alt="payment-logo" width="111" height="23"></div>
+							<div class="col text-center border-bottom border-bottom-md-0 border-end-md"><img class="opacity-75 my-2 my-md-1" src="img/in-avo-18-icon-2.svg" alt="payment-logo" width="111" height="34"></div>
+							<div class="col text-center border-bottom border-bottom-md-0 border-end-md"><img class="opacity-75 my-2 my-md-1" src="img/in-avo-18-icon-3.svg" alt="payment-logo" width="111" height="34"></div>
+							<div class="col text-center border-bottom border-end-lg border-bottom-md-0"><img class="opacity-75 my-2 my-md-1" src="img/in-avo-18-icon-4.svg" alt="payment-logo" width="111" height="34"></div>
+							<div class="col text-center border-bottom border-bottom-lg-0 border-end-lg d-md-none d-lg-block"><img class="opacity-75 my-2 my-md-1" src="img/in-avo-18-icon-5.svg" alt="payment-logo" width="111" height="34"></div>
+							<div class="col text-center d-md-none d-lg-block"><img class="opacity-75 my-2 my-md-1" src="img/in-avo-18-icon-6.svg" alt="payment-logo" width="112" height="35"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-5 in-avo-5 bg-white">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12 col-lg-9 text-center">
+						<h2>Get started with interb market fx.</h2>
+						<p class="lead mb-4">Global access to financial markets from a single account</p>
+						<a href="#" class="btn btn-outline-secondary mb-2 mb-md-0">
+							<div class="d-flex align-items-center text-start"><img src="img/in-windows-icon.svg" alt="icon" width="36" height="36">
+								<div><span class="h6">Download for</span>
+									<br>Microsoft Windows 11</div>
+							</div>
+						</a>
+						<a href="#" class="btn btn-outline-secondary">
+							<div class="d-flex align-items-center text-start"><img src="img/in-apple-icon.svg" alt="icon" width="29" height="36">
+								<div><span class="h6">Download for</span>
+									<br>macOS Monterey</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="bg-light pb-4 in-avo-footer">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-4 gy-lg-0">
+				<div class="col">
+					<h5>Overview</h5>
+					<ul class="list-unstyled">
+						<li><a href="careers.html">Careers</a></li>
+						<li><a href="about.html">Our company</a></li>
+						<li><a href="market.html">Markets</a></li>
+						<li><a href="promotion.html">Promotion</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<h5>Legal</h5>
+					<ul class="list-unstyled">
+						<li><a href="terms.html">T&C</a></li>
+						<li><a href="policy.html">Privacy Statement</a></li>
+						<li><a href="risk.html">Risk Disclosure</a></li>
+						<li><a href="legal-docs.html">Legal Documentation</a></li>
+						<li><a href="security.html">Security</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<h5>Support</h5>
+					<ul class="list-unstyled">
+						<li><a href="help-center.html">Help Center</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="customers.html">Customers</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<h5>Get in Touch</h5>
+					<p>Contact us any time for getting support.</p><a class="footer-email" href="mailto:support@interbmarketfx.com ">support@interbmarketfx.com </a>
+					
+				</div>
+				<div class="col-md-12 col-lg-12 text-center small mt-4">
+					<div class="trade-warning">
+						<h6 class="mb-1"><span><i class="fas fa-triangle-exclamation fa-sm"></i>Risk warning</span></h6>
+						<p class="mb-0">The prices of securities fluctuate, sometimes dramatically. The price of a security may move up or down, and may become valueless. It is as likely that losses will be incurred rather than profit made as a result of buying and selling securities.</p>
+					</div>
+					<p class="mb-0 text-secondary">Partner: Stephen Dale Burford</p>
+					<img src="img/shield.png" style="width: 30%; margin-bottom: 10px;">
+					<p class="copyright-text">Copyright 2019 ©2025 interb market fx Ltd. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+
+		<section class="custom-social-proof d-none">
+				<div class="notification-wrapper">
+					<p class="notification-content">
+						Someone from <span id="country">Nepal</span><br>
+						recently <span id="transaction-type">withdrew</span> 
+						<span id="amount">$10,000 USD</span>
+						<small>
+							<span id="time">1</span> hour ago &nbsp; 
+							<i class="fa fa-check-circle"></i> Verified by 
+							<a class="poweredby" href="blockchain.html" target="_blank">BlockChain</a>
+						</small>
+					</p>
+				</div>
+		</section>
+
+	</footer>
+	<div class="d-none d-md-block">
+		<a href="#" class="to-top fas fa-arrow-up text-decoration-none text-white"></a>
+	</div>
+	
+<script>
+const countries = ["Nepal", "USA", "Germany", "India"];
+const transactionTypes = ["withdrew", "deposited"];
+const amounts = ["$10,000 USD", "$5,000 USD", "$15,000 USD", "$2,900 USD", "$100,000 USD", "$85,000 USD", "$5,800 USD", "$2,520 USD"];
+
+function updateNotification() {
+    const country = countries[Math.floor(Math.random() * countries.length)];
+    const type = transactionTypes[Math.floor(Math.random() * transactionTypes.length)];
+    const amount = amounts[Math.floor(Math.random() * amounts.length)];
+    const time = Math.floor(Math.random() * 12) + 1;
+
+    document.getElementById("country").textContent = country;
+    document.getElementById("transaction-type").textContent = type;
+    document.getElementById("amount").textContent = amount;
+    document.getElementById("time").textContent = time;
+
+    const notification = document.querySelector('.notification-wrapper');
+    notification.classList.add('show-notification');
+    setTimeout(() => {
+        notification.classList.remove('show-notification');
+    }, 4000); // Notification stays visible for 4 seconds
+}
+
+// setInterval(updateNotification, 5000); // Updates every 5 seconds
+
+
+</script>
+<script src="preloader/scriipt.js"></script>
+	  <script src="dark/dark.js"></script>
+	<script src="js/vendors/bootstrap.bundle.min.js"></script>
+	<script src="js/vendors/vanilla-marquee.min.js"></script>
+	<script src="js/vendors/tradingview-widget.min.js"></script>
+	<script src="js/utilities.min.js"></script>
+	<script src="js/config-theme.js"></script>
+	
+	
+</body>
+<!-- index.html  18:25:20 GMT -->
+
+</html>

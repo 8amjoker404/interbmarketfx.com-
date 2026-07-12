@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading - CMC Trade Vault</title>
+    <link rel="stylesheet" href="dashboard-components.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-20px) translateY(-20px); }
+            50% { transform: translateX(20px) translateY(-10px); }
+            75% { transform: translateX(-10px) translateY(20px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="dashboard-header"></div>
+
+    <!-- Main Content -->
+    <div class="dashboard-content">
+        <main class="dashboard-main">
+            <h1>Trading Dashboard</h1>
+            <p>This page shows how the active navigation works.</p>
+            
+            <div style="margin-top: 2rem;">
+                <h3>Test Active Navigation:</h3>
+                <button onclick="window.dashboardComponents.setActive('dashboard')" style="margin: 0.5rem; padding: 0.5rem 1rem; background: #00d4ff; color: white; border: none; border-radius: 8px; cursor: pointer;">Set Dashboard Active</button>
+                <button onclick="window.dashboardComponents.setActive('trading')" style="margin: 0.5rem; padding: 0.5rem 1rem; background: #7c3aed; color: white; border: none; border-radius: 8px; cursor: pointer;">Set Trading Active</button>
+                <button onclick="window.dashboardComponents.setActive('portfolio')" style="margin: 0.5rem; padding: 0.5rem 1rem; background: #f59e0b; color: white; border: none; border-radius: 8px; cursor: pointer;">Set Portfolio Active</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="dashboard-footer"></div>
+
+    <script src="dashboard-components.js"></script>
+    <script>
+        // Load header and footer components
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Load header
+                const headerResponse = await fetch('dashboard-header.html');
+                const headerHTML = await headerResponse.text();
+                document.getElementById('dashboard-header').innerHTML = headerHTML;
+
+                // Load footer
+                const footerResponse = await fetch('dashboard-footer.html');
+                const footerHTML = await footerResponse.text();
+                document.getElementById('dashboard-footer').innerHTML = footerHTML;
+
+                // Initialize components after loading
+                setTimeout(() => {
+                    window.dashboardComponents = new DashboardComponents();
+                    // This page is trading.html, so set trading as active
+                    window.dashboardComponents.setActive('trading');
+                }, 100);
+            } catch (error) {
+                console.error('Error loading components:', error);
+            }
+        });
+    </script>
+</body>
+</html>

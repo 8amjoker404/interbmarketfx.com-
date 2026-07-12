@@ -1,0 +1,75 @@
+const mailOptions = {
+  from: '"CMC TradeVault" <noreply@cmctradevault.com>',
+  to: user.email,
+  subject: "📈 Trade Signal Purchase Confirmation",
+  html: `
+    <div style="max-width: 620px; margin: 30px auto; padding: 25px; border-radius: 12px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); border: 1px solid #ddd; font-family: 'Segoe UI', sans-serif; color: #333;">
+      
+      <h1 style="text-align: center; color: #9361f3; font-size: 26px; margin-bottom: 10px;">
+        ⚡ CMC TradeVault
+      </h1>
+
+      <h2 style="text-align: center; color: #9361f3;">✅ Trade Signal Purchase Successful</h2>
+
+      <p style="font-size: 16px;">Hello <strong>${user.name}</strong>,</p>
+      <p style="font-size: 15px; color: #444;">
+        You have successfully purchased a trade signal. Below are the full details:
+      </p>
+
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 8px;">
+        <tr>
+          <td style="padding: 8px; font-weight: bold; color: #444;">Asset:</td>
+          <td style="padding: 8px; color: #000;">${signal.asset}</td>
+        </tr>
+        <tr style="background-color: #f3f0fb;">
+          <td style="padding: 8px; font-weight: bold; color: #444;">Entry Point:</td>
+          <td style="padding: 8px; color: #000;">${signal.entry_point}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold; color: #444;">Exit Point:</td>
+          <td style="padding: 8px; color: #000;">${signal.exit_point}</td>
+        </tr>
+        <tr style="background-color: #f3f0fb;">
+          <td style="padding: 8px; font-weight: bold; color: #444;">Stop Loss:</td>
+          <td style="padding: 8px; color: #000;">${signal.stop_loss}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold; color: #444;">Trade Duration:</td>
+          <td style="padding: 8px; color: #000;">${signal.trade_duration}</td>
+        </tr>
+        <tr style="background-color: #f3f0fb;">
+          <td style="padding: 8px; font-weight: bold; color: #444;">Strategy:</td>
+          <td style="padding: 8px; color: #000;">${signal.strategy}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold; color: #444;">Risk Level:</td>
+          <td style="padding: 8px; color: #000;">${signal.risk_level}</td>
+        </tr>
+        <tr style="background-color: #f3f0fb;">
+          <td style="padding: 8px; font-weight: bold; color: #444;">Provider:</td>
+          <td style="padding: 8px; color: #000;">${signal.provider_name}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold; color: #444;">Provider Bio:</td>
+          <td style="padding: 8px; color: #000;">${signal.provider_bio}</td>
+        </tr>
+        <tr style="background-color: #f3f0fb;">
+          <td style="padding: 8px; font-weight: bold; color: #444;">Price Paid:</td>
+          <td style="padding: 8px; color: #000;">$${signal.pricing}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold; color: #444;">Balance After Purchase:</td>
+          <td style="padding: 8px; color: #000;">$${(user.currency_balance - signal.pricing).toFixed(2)}</td>
+        </tr>
+        <tr style="background-color: #f3f0fb;">
+          <td style="padding: 8px; font-weight: bold; color: #444;">Contact Info:</td>
+          <td style="padding: 8px; color: #000;">${signal.contact_info}</td>
+        </tr>
+      </table>
+
+      <p style="font-size: 13px; text-align: center; color: #888; margin-top: 40px;">
+        © ${new Date().getFullYear()} CMC TradeVault. All rights reserved.
+      </p>
+    </div>
+  `
+};
